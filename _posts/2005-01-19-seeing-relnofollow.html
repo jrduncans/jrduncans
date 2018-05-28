@@ -1,0 +1,29 @@
+---
+layout: post
+title: Seeing rel="nofollow"
+date: '2005-01-19T10:40:00.000-05:00'
+author: Stephen
+tags:
+- web
+modified_time: '2005-01-19T11:04:47.540-05:00'
+blogger_id: tag:blogger.com,1999:blog-3411034.post-110614945803693814
+blogger_orig_url: http://www.stephenduncanjr.com/2005/01/seeing-relnofollow.html
+---
+
+<p>
+If you use Firefox and want to see if this new tag is getting used, add something like this to your <a href="http://www.mozilla.org/support/firefox/edit#content">userContent.css</a> file:
+</p>
+<blockquote>
+<pre>
+a[rel="nofollow"] 
+{
+     text-decoration: line-through ! important;
+     border: dotted thin gray ! important;
+     color: gray ! important;
+     background-color: white;
+}
+</pre>
+</blockquote>
+<p>
+This will put a strike-through and a dotted border around the link text, and make the text gray with a white background.
+</p>

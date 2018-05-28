@@ -1,0 +1,27 @@
+---
+layout: post
+title: Common Custom Taglib Problem
+date: '2005-08-17T16:44:00.000-05:00'
+author: Stephen
+tags:
+- programming
+modified_time: '2005-08-23T22:41:16.126-05:00'
+blogger_id: tag:blogger.com,1999:blog-3411034.post-112431594939811546
+blogger_orig_url: http://www.stephenduncanjr.com/2005/08/common-custom-taglib-problem.html
+---
+
+<p>
+I just found this bug today in <a href="http://www.exoplatform.com/portal/faces/public/exo">EXO's</a> portlet taglib implementation.  I also hit the same problem when developing custom tags for the first time.  So, I thought I'd discuss, and hope that people having problems might stumble across this post.
+</p>
+<p>
+The hardest part is recognizing the problem.  As a consumer of the taglib, I spent several hours trying to figure out the source of the problem by analyzing what my code was doing, and by trying to create a simple test case, and was nowhere close to solving the problem.  Only when I looked at the source code (thank goodness for open-source software!) did I realize the source of the problem.
+</p>
+<p>
+The symptoms of the problem are that the results of using the taglib appear to include attributes and nested parameters that you didn't specify.  These mystery attributes are actually coming from another usage of the tag somewhere else (another page, another portlet, etc.).
+</p>
+<p>
+The problem is the taglib specification allows for implementers, such as Tomcat, to pool instances of the tag.  This means that if you use the same tag twice, with the same attributes, the same instance of the tag object will be used.  The problem tends to come in when you have nested tags.  Such as &lt;portlet:param&gt; tags inside a &lt;portlet:actionURL&gt; tag.  The &lt;portlet:actionURL&gt; tag object is reused.  If the portlet:param values are stored in a Map instance variable, then parameters from the first usage of the tag will still be around in the second instance of the tag, even if you're specifying different parameters.
+</p>
+<p>
+The fix is easy.  You need to reset any instance variables whose values may vary even when the outer tag's attributes are the same.  In this case, the parameters Map needs to be emptied, or simple reset to be a new HashMap.  Because you cannot guarantee that the doEndTag method will be called (in the case of an exception occurring), you should play it safe, and reset your instance variables in the doStartTag method.
+</p>

@@ -1,0 +1,10 @@
+---
+date: '2004-08-24T21:00:00.000-05:00'
+author: Stephen
+blogger_post_id: tag:blogger.com,1999:blog-3411034.post-109338614395631326
+modified_time: '2004-08-24T21:00:27.553-05:00'
+blogger_id: tag:blogger.com,1999:blog-3411034.post-109339922755424409
+blogger_orig_url: http://www.stephenduncanjr.com/2004/08/fixed-style-sheet-for-ie.html?showComment=1093399200000#c109339922755424409
+---
+
+Using just a space is a descendant selector.  So any elements that match the selector (#navigation_section, for instance) that are anywhere under the body would match if I used a space.<br /><br />The > is the child selector.  It only applies to an element directly below it.  So a div with id navigation_section under the body would match, but a div  inside a div that had the id navigation_section would not match.

@@ -1,0 +1,24 @@
+---
+layout: post
+title: Troubleshooting Stupid Problems
+date: '2004-07-20T07:34:00.000-05:00'
+author: Stephen
+tags:
+- programming
+modified_time: '2006-07-10T16:38:01.900-05:00'
+blogger_id: tag:blogger.com,1999:blog-3411034.post-109032800054521593
+blogger_orig_url: http://www.stephenduncanjr.com/2004/07/troubleshooting-stupid-problems.html
+---
+
+<p>
+I hate spending a whole day trouble-shooting something, only to find that the problem was something little and dumb.
+</p>
+<p>
+In this case, I was trying to set up an Oracle connection in Tomcat 5.0 (using the ojdbc14.jar thin Oracle JDBC driver) as a DataSource for access via JNDI.  As you can guess from all that, there's plenty of places for things to go wrong.  The configuration for all this is stored in an XML file.  I tried all sorts of things to fix this.  Capitalization of the named parameters, the driver name, the factory name, everything.
+</p>
+<p>
+What did the problem turn out to be?  A $.  The password for the account I was using to connect to the database conatined a dollar sign.  I got the password changed to something not using a $ sign, and everything suddenly worked.
+</p>
+<p>
+Now, for any smart people out there: is this an XML issue?  Is $ a special character?  Does it need escaping?  (Already faced that issue with an ampersand that needed escaping).  Or is it a Tomcat specific issue?  I'm pretty sure it's not an Oracle specific issue, at it seems to break the MySQL driver too, plus the connection worked fine if made straight from Java code.
+</p>

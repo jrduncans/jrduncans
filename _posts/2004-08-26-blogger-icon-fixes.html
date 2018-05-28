@@ -1,0 +1,22 @@
+---
+layout: post
+title: Blogger Icon Fixes
+date: '2004-08-26T18:47:00.000-05:00'
+author: Stephen
+tags:
+- meta
+- blogger
+modified_time: '2004-08-26T20:05:06.303-05:00'
+blogger_id: tag:blogger.com,1999:blog-3411034.post-109356459354639662
+blogger_orig_url: http://www.stephenduncanjr.com/2004/08/blogger-icon-fixes.html
+---
+
+<p>
+I recently sent in a question to <a href="http://help.blogger.com/">Blogger</a> support about my Delete Comment icons not showing up, because they'd replaced the code that put in an image tag from the template with a span filled with a non-breaking space.  As usual, after I ask for help, I figured it out myself.  It turns out you have to put <$BlogMetaData$> into your template so that you can get some style sheets that set the icons on the Delete Comment, E-mail Post, and Edit Post spans.
+</p>
+<p>
+Speaking of which: that's right, there's a new feature for you, the reader.  Now there's a handy button to let you send an e-mail to someone about one of my posts.  There's also a nice feature for me: a way to click on an icon on a post, and take me straight to editing it in <a href="http://www.blogger.com">Blogger</a>.  The new e-mail feature was announced today, which led me to disover the rest of all of this.
+</p>
+<p>
+The down-side to use the BlogMetaData tag is that it includes a tag for something to do with the Blogger API, that I don't quite undestand.  Unfortunately, the current implementation of auto-discovery for Firefox brings up that feed along with my actual site feed, which could confuse user's of Firefox coming to this Blog (or others like it) in the future.  However, it appears that Bloglines auto-discovery handles it properly, only showing my actual site feed.  I guess it's time to go work on getting a bug filed against Firefox's auto-discovery to get it fixed, then.
+</p>

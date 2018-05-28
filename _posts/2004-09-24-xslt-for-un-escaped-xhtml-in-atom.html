@@ -1,0 +1,15 @@
+---
+layout: post
+title: XSLT For Un-escaped XHTML in Atom Content
+date: '2004-09-24T18:44:00.000-05:00'
+author: Stephen
+tags:
+- programming
+modified_time: '2004-09-24T18:52:15.036-05:00'
+blogger_id: tag:blogger.com,1999:blog-3411034.post-109606993503531080
+blogger_orig_url: http://www.stephenduncanjr.com/2004/09/xslt-for-un-escaped-xhtml-in-atom.html
+---
+
+<p>
+I've decided to go with the <a href="http://www.atomenabled.org/">Atom</a> format for syndication of data in the web application I develop at work.  Inside the content tags, I'm placing inline XHTML (not escaped).  I then wanted to use an XSLT to show the feed more nicely in the browser.  Simply using &lt;xsl:copy-of select="atom:content"&gt; worked for Internet Explorer, but not for Mozilla Firefox.  It turns out it wasn't treating the content as XHTML, so I wrapped the content inside a div: &lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;
+</p>

@@ -1,0 +1,32 @@
+---
+layout: post
+title: 'Browser Spoofing: Defining The Problem'
+date: '2004-09-08T16:28:00.000-05:00'
+author: Stephen
+tags:
+- web
+modified_time: '2004-09-08T16:48:01.590-05:00'
+blogger_id: tag:blogger.com,1999:blog-3411034.post-109468007142065936
+blogger_orig_url: http://www.stephenduncanjr.com/2004/09/browser-spoofing-defining-problem.html
+---
+
+<p>
+I've decided to take this issue slowly; most people's "solutions" are already assuming a certain definition of the problem, which is rarely stated.
+</p>
+<p>
+The problem has little to do with Mozilla's ability to display remote XUL.  This just makes a convincing spoof easier, although it limits the spoof to Mozilla-based browsers, and usually to a subset of versions.  Similar things can be done in IE with a lot of work on some very clever styling and javascript.
+</p>
+<p>
+The problem is this: pieces of the "chrome" (browser interface, as opposed to web-content display) can be hidden, and then fake data put in its place that trick the user into thinking that data is part of the browser.
+</p>
+<p>
+But what things can a user be tricked into doing by mistaking content for browser?  There's no danger (security-wise) in hitting a fake back-button, right?  So, here's the problems I can think of:
+</p>
+<ul>
+<li>The URL bar, due to passwords-as-part-of-the-url for FTP sites.</li>
+<li>A browser-internal pasword dialog (such as the master-password UI)</li>
+<li>Any current indicators used to help prevent page-spoofing attacks (spoofs of web-site interface, not browser interface): the security (lock) indicator, be it on the status bar, or as part of the URL bar.</li>
+</ul>
+<p>
+I'm sure there are some potential attacks I'm missing.  If you know of them, add them.  If I come across them, I'll update this post to include them.  As I see it, the attack fall into two categories: browser-input spoofing, and browser anti-phishing circumvention.  Does that cover it?  Are there other types I'm missing?
+</p>

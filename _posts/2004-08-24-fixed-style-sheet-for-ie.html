@@ -1,0 +1,24 @@
+---
+layout: post
+title: Fixed Style-Sheet for IE
+date: '2004-08-24T17:16:00.000-05:00'
+author: Stephen
+tags:
+- meta
+modified_time: '2004-08-24T17:22:23.956-05:00'
+blogger_id: tag:blogger.com,1999:blog-3411034.post-109338614395631326
+blogger_orig_url: http://www.stephenduncanjr.com/2004/08/fixed-style-sheet-for-ie.html
+---
+
+<p>
+After a bit of looking and playing for another method, I decided to give up and use my first CSS-hack for IE.  Ugh.  Basically, IE doesn't support position: fixed, so instead of falling back to position: absolute, it falls back to position:static, placing my navigation bar at the bottom of the page, as that's where it falls in the source.
+</p>
+<p>
+IE also doesn't understand the child selector: >.  So, I changed the style on the navigation section to use position:absolute, then I add another style rule that IE doesn't understand to add position:fixed back:
+</p>
+<blockquote>
+body > #navigation_section { position: fixed;}
+</blockquote>
+<p>
+It's unfortunate to have to resort to such hacks, but it gets the job done.  And now my site looks decent in IE, and exactly how I like it in Firefox.  Opera still has an issue, but it's clearly a bug: if you zoom-out and zoom back in, the page will display correctly.  If anybody wants to check out how my site looks in Safari or Konqueror, I'd appreciate it (I haven't got my Linux box hooked up, and won't for a while).
+</p>

@@ -1,0 +1,39 @@
+---
+layout: post
+title: Rich Internet Applications
+date: '2004-09-02T17:58:00.000-05:00'
+author: Stephen
+tags:
+- web
+modified_time: '2004-09-02T18:33:57.893-05:00'
+blogger_id: tag:blogger.com,1999:blog-3411034.post-109416803789467847
+blogger_orig_url: http://www.stephenduncanjr.com/2004/09/rich-internet-applications.html
+---
+
+<p>
+Normal "Web Applications" consist of HTML and Javascript on the client side, and one of many types of server-side languages (I use Java/JSP).  There are two problems with this.  The first is the degree of interactivity on the client: there's only so much  you can do with Javascript to make an HTML page feel interactive, and it's messy for even one browser, and even messier when trying to support multiple browsers.  The second is the difficulty of server-client communication.  An HTML based application can only consist of a series of requests and responses between the server and the client.  Server-side languages try to cut down on the pain of tracking information across requests for a single client (through session variables), but that doesn't solve the pain of needing to redo the entire response for a small change caused by a request.
+</p>
+<p>
+These problems do not occur for a rich client.  A rich client can be very interactive, and can talk a direct protocol back to the server for data, and can have the rest of the logic embedded in the client.  The drawbacks to the rich client are: the current ease of development of GUIs, and the ease of deployment (installing an application is a very high barrier to entry compared to a web application, and it doesn't go where the user goes).
+</p>
+<p>
+The solution is generally proposed as a combination of the two: a "Rich Internet Application" or some other term.  The prerequisites for this are: a ubiquitous client-side runtime to run the client code in (a Web Browser fills this role in a traditional Web Application), and a simple development model, especially for the GUI (HTML fills this role for the traditional Web Application).
+</p>
+<p>
+Java Applets were one early, popular contender.  Java is cross-platform, and functions as a plug-in to the web browser, which could have led to ubiquity.  It used (at the time) the best development langauge available (others have caught up with, but not surpassed, Java since then, in my opinion).  There are still some little games and such on the web, and some smaller interactive apps I've seen in my work environment (even one I worked on developing a little during an internship) that go this route.  There are two major problems: ease of GUI design, and compatibility.  Swing isn't bad for GUI design, but it's not as easy as HTML.  As for compatibility, the combination of Microsoft's incompatible JVM being installed by default (which severely limited the deployment of the JRE),the poor implementation of auto-updating the installed JRE (partially due to its size), and level of incompatibility between versions has created JRE version hell, severely limiting the popularity of Applets for this kind of development.  These may be able to make a new push, if techniques for XML based GUI design targeted at Swing become available.
+</p>
+<p>
+The next major contender is Flash.  It's available for multiple platforms and multiple browsers, and has a very large install base.  However, since it was initially pushed almost entirely at client-side only GUI development, it caught on with users and graphic designers, but not developers.  It still suffers from this stigma as a presentation only tool.  It's also (from what I hear, I've never done Flash work) a bit difficult to design with as well.  But Macromedia is working on pushing an XML based client-server way to do this Rich Internet Application concept, called <a href="http://www.macromedia.com/devnet/">Flex</a>.  Don't know much about it, but I should probably start trying it out.
+</p>
+<p>
+There's also a pretty neat system that I found today, shown to me by a <a href="http://www.idealens.com">co-worker</a>, that sparked this post.  It works similary to Flex, I guess.  It runs on a Java Application Server (for instance, <a href="http://jakarta.apache.org/tomcat/">Tomcat</a>), and uses XML and Javascript for the GUI design.  It's an interesting thing to take a look at.
+</p>
+<p>
+There are also two contenders that I see, that will not be completely cross-browser, but are still up-and-coming.  The first is XUL, the technology <a href="http://www.mozilla.org">Mozilla products</a> are based on.  While Mozilla products are full client apps, XUL can be Internet deployed.  This is again, an XML-based, Javascript (and CSS, which I haven't seen in other products) based GUI design system.  Mozilla is cross-platform, but requires the underlying Mozilla Platform.
+</p>
+<p>
+Alternately, there's the upcoming system by <a href="http://www.microsoft.com">Microsoft</a>, orginally targeted for their next-generation OS, but now to appear on XP eventually, called XAML (with Avalon relating in there somehow).  This, of course, will likely only work in IE, and only on Microsoft based operating systems.  But, it will have the advantage of being pre-installed on more people's desktops than any other technology over time, from a company that has better developer relationships than Macromedia.
+</p>
+<p>
+With all these contenders, the future is really still up in the air.  It'll be interesting to see how this all plays out.  Anybody got their own ideas on the pros and cons of all this?  Suggestions on other contenders I missed?
+</p>

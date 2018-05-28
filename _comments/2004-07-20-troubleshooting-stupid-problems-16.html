@@ -1,0 +1,10 @@
+---
+date: '2004-07-20T11:52:00.000-05:00'
+author: Ryan
+blogger_post_id: tag:blogger.com,1999:blog-3411034.post-109032800054521593
+modified_time: '2004-07-20T11:52:57.273-05:00'
+blogger_id: tag:blogger.com,1999:blog-3411034.post-109034237727267253
+blogger_orig_url: http://www.stephenduncanjr.com/2004/07/troubleshooting-stupid-problems.html?showComment=1090342320000#c109034237727267253
+---
+
+It's not an XML issue.  The $ has no special meaning in XML.  It's just &, <, and > that you really have to watch out for with XML.<br /><br />I couldn't tell you if it was related to Tomcat or Oracle though, although I think Oracle should support $ in the password no problem.  It might be the JDBC driver internally using the $ as some sort of terminator and thus giving you problems.<br /><br />If you ever find out, I'd be curious to know where the problem was with the $.  Undocumented bugs like that are annoying, for sure.

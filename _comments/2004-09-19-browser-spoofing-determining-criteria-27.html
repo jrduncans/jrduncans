@@ -1,0 +1,10 @@
+---
+date: '2004-09-19T11:02:00.000-05:00'
+author: Ryan
+blogger_post_id: tag:blogger.com,1999:blog-3411034.post-109560555592958450
+modified_time: '2004-09-19T11:02:15.156-05:00'
+blogger_id: tag:blogger.com,1999:blog-3411034.post-109560973515818727
+blogger_orig_url: http://www.stephenduncanjr.com/2004/09/browser-spoofing-determining-criteria.html?showComment=1095609720000#c109560973515818727
+---
+
+If you're trying to really prevent all spoofing, then you're going to need to look beyond the domain name.  There should ultimately be some way to validate that the actual web server you are talking to is the correct and legit server.<br /><br />Domain names can be easily hijacked and redirected to other services due to the way DNS works.  In the future we'll probably have to replace DNS as the way we resolve domains on the internet, but in the short time, a solution may need to address the validity of the domain resolution as well as other issues.<br /><br />Certificates can work to help this, in that if you always get certificate A from the website, and suddenly you get certificate B, where something critical has changed (company name, certificate owner, certificate co-signatures, etc), then that may indicate that something is wrong (but not always..).  Of course, you also point out the flaws in certificates (if they were cheaper to obtain this would clearly be less of an issue).

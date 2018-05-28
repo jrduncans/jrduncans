@@ -1,0 +1,30 @@
+---
+layout: post
+title: 'Browser Spoofing: Determining the Criteria'
+date: '2004-09-19T09:32:00.000-05:00'
+author: Stephen
+tags:
+- web
+modified_time: '2004-09-19T09:52:35.930-05:00'
+blogger_id: tag:blogger.com,1999:blog-3411034.post-109560555592958450
+blogger_orig_url: http://www.stephenduncanjr.com/2004/09/browser-spoofing-determining-criteria.html
+---
+
+<p>
+So, we know <a href="http://www.stephenduncanjr.com/2004/09/browser-spoofing-defining-problem.shtml">what the problem is</a>, I think.  But that doesn't quite get us to what criteria we'll use to judge possible solutions.
+</p>
+<p>
+Obviously, the first criteria is that it needs to make it possible to identify spoofing in the situations listed in the problem description. But, does it just need to possible by a computer literate user who's paying attention?  Or does it need to be so obvious that anybody will notice?  Does the solution need to have limited impact on the UI of current non-spoofed pages?  When it comes to spoofing to get around the browser's existing anti-page-spoofing, are we only limiting our concern to "secure sites" (https://)?
+</p>
+<p>
+Here's what I'm going to use:
+<ol>
+<li>It needs to address the listed problems.</li>
+<li>It needs to make it possible for a fairly computer literate user to identify.</li>
+<li>It should address non-secure sites as well.</li>
+<li>A compromise between making things more obvious for all users and keeping the UI clean needs to be made.</li>
+</ol>
+</p>
+<p>
+Regarding #3: This really goes above and beyond the current problem, as it's an attempt to add web-site spoofing protection to non-secure sites.  But the use of certificates to authenticate a site's identity is a joke on the modern internet.  Many sites I do trust don't have the money for a proper certificate for every domain name that points to that content.  A real site that had the web server hacked is just as untrustworthy as someone putting up a fake version.  So, I'd rather we simply assume that the domain name is valid, and prevent spoofing from there.  Certainly, secure sites should continue to receive the extra UI they do now, but all sites should be included in anti-phishing schemes.
+</p>

@@ -1,0 +1,32 @@
+---
+layout: post
+title: 'Browser Spoofing: Examining the Solutions'
+date: '2004-09-19T09:53:00.000-05:00'
+author: Stephen
+tags:
+- web
+modified_time: '2004-09-19T10:24:48.126-05:00'
+blogger_id: tag:blogger.com,1999:blog-3411034.post-109556362087342780
+blogger_orig_url: http://www.stephenduncanjr.com/2004/09/browser-spoofing-examining-solutions.html
+---
+
+<p>
+First, read Jesse Ruderman's <a href="http://www.squarefree.com/archives/000539.html">take on the issue</a> from last month.  Then, check out my definition of <a href="http://www.stephenduncanjr.com/2004/09/browser-spoofing-defining-problem.shtml">the problem</a> and <a href="http://www.stephenduncanjr.com/2004/09/browser-spoofing-determining-criteria.shtml">
+the criteria for a solution</a>.
+</p>
+<h4>Proposed Solution #1: always show the address bar</h4>
+<p>
+Ok.  This does solve the problems.  Now, only internal dialogs can show without an address bar.  Since Mozilla added security information to the address bar, we can now always see that data.  And for unsecure sites, we have the full url, though that may be somewhat hidden by adding lots of text before the domain name in the url.  The downsides: we usually have our navigation buttons here, which add unnecessary clutter to the UI for web-based dialogs.  Plus, Firefox lets you customize your toolbars.  Personally, my navigation bar is empty, I have everyting on the menu bar.  So I'm no longer really protected in terms of site spoofing.  Also, this still allows sites to spoof the status bar, which is the traditional location of the security information (and still one of the sources of security information in Firefox), so user's who check that instead of the address bar will be fooled into thinking they're safe.
+</p>
+<h4>Proposed Solution #2: always show the status bar</h4>
+<p>
+Again, this solves the problems for the most part.  Internal dialogs would be the only one's without a status bar.  On secure sites, the certificate information is available, and the domain name is shown.  If we simply added showing the domain name on the status bar for unsecure sites as well, then this would actually provide more anti-phishing protection than the address bar, as it would prevent the domain from being hidden by a long url.  Also, the status bar is slightly smaller than the address bar, and data there can't have been moved to another toolbar.  The downside: Mostly, now the address bar can be spoofed, and user's who look there for data, especially on un-secure sites, may be tricked if they ignore the status bar data.  
+</p>
+<h4>Proposed Solution #3: <a href="http://www.saintpatrickdc.org/bsmedberg/index.php?p=24">A new UI</a></h4>
+<p>
+The idea here is to replace the status bar with something that actually wraps around the untrusted chrome.  This has all the benefits of the status bar approach, but it prevents address-bar spoofing to an extent, by forcing that spoofed address bar to appear inside the yellow outline.  My concerns are: these mock-ups don't take into account other current status-bar data.  Does that still stay on this UI?  Or are we not going to entirely replace the current status bar?  How would this really look for a normal, maximized full window?  Also, how can we insure that the utility of the outline and such don't disappear when using different browser themes?  This is already a small problem with the current UI, but I can see that outline becoming even more of a problem.  
+</p>
+<h4>Conclusions</h4>
+<p>
+The reason there is no simple solution to this problem is because we (Mozilla) have chosen to display security information two places: the address bar and the status bar.  So, unless we change that, I think <a href="http://www.saintpatrickdc.org/bsmedberg/">Benjamin Smedberg</a>'s idea (#3) is the best way to go.  I wasn't convinced when it was first brought up, and obviously I still have some concerns, but going through this process has convinced me.
+</p>
