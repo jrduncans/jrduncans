@@ -1,0 +1,8 @@
+title: Stephen's Statements
+email: webmaster@stephenduncanjr.com
+description: Writing, Politics, and More from Stephen Duncan Jr
+baseurl: ""
+url: http://www.stephenduncanjr.com
+
+plugins:
+  - jekyll-feed
