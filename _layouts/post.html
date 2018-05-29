@@ -73,14 +73,14 @@
                 <div class="Post">
                     <h3 class="PostTitle">
                         <BlogItemTitle>
-                            {{ page.title }}
+                            {{ page.title | escape }}
                         </BlogItemTitle>
                     </h3>
                     <div class="PostBody">
                         {{ content }}
                     </div>
                     <div class="PostFooter">
-                        - {{ page.author }} @ 
+                        - {{ page.author | escape }} @ 
                         <a class="internal" href="{{ page.url }}" title="permanent link">{{ page.date | date: "%l:%M %p" }}</a>
                         <MainOrArchivePage>
                             | <a class="internal" href=""{{ page.url }}#disqus_thread">

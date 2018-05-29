@@ -6,3 +6,12 @@ url: http://www.stephenduncanjr.com
 
 plugins:
   - jekyll-feed
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      author: Stephen
