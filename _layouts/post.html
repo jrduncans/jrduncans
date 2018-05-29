@@ -57,7 +57,7 @@
         </script>
     </head>
     <body>
-        <h1 id="banner">{{ site.title | escape }} <span id="subBanner">{{ site.description | escape }}</span></h1>
+        <h1 id="banner">{{ site.title | smartify | escape }} <span id="subBanner">{{ site.description | smartify | escape }}</span></h1>
         <div id="content_section">
         <MainPage>
             <div class="update">
@@ -73,7 +73,7 @@
                 <div class="Post">
                     <h3 class="PostTitle">
                         <BlogItemTitle>
-                            {{ page.title | escape }}
+                            {{ page.title | smartify | escape }}
                         </BlogItemTitle>
                     </h3>
                     <div class="PostBody">
