@@ -77,17 +77,28 @@
                         </BlogItemTitle>
                     </h3>
                     <div class="PostBody">
+                        <div style="clear:both;"></div>
                         {{ content }}
+                        <div style="clear:both; padding-bottom:0.25em"></div>
+
+                        {%- if page.tags-%}
+                            {%- capture tagscommas -%}
+                                {%- for tag in page.tags -%}
+                                <a rel="tag" href="/search/label/{{ tag }}">{{ tag }}</a>{%- unless forloop.last -%},&nbsp;{%- endunless -%}
+                                {%- endfor -%}
+                            {%- endcapture -%}
+                            <p class="blogger-labels">Labels: {{ tagscommas }}</p>
+                        {% endif %}
                     </div>
                     <div class="PostFooter">
                         - {{ page.author | escape }} @ 
-                        <a class="internal" href="{{ page.url }}" title="permanent link">{{ page.date | date: "%l:%M %p" }}</a>
+                        <a class="internal" href="{{ page.url | relative_url }}" title="permanent link">{{ page.date | date: "%l:%M %p" }}</a>
                         <MainOrArchivePage>
-                            | <a class="internal" href=""{{ page.url }}#disqus_thread">
+                            | <a class="internal" href=""{{ page.url | relative_url }}#disqus_thread">
                 View comments</a>
                         </MainOrArchivePage>
                         <ItemPage>
-                            | <a class="internal" href="{{ site.url }}">Return to Blog</a>
+                            | <a class="internal" href="{{ site.url | relative_url }}">Return to Blog</a>
                         </ItemPage>
                     </div>
                 </div>
