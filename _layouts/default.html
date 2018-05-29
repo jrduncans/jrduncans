@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ site.title | escape }}: {{ page.title | escape }}</title>
+    <meta name="Author" content="Stephen Duncan Jr." />
+    <meta name="description" content="{{ site.description | escape }}" />
+    <meta name="keywords" content="Stephen,Duncan,Stephen Duncan" />
+    <meta name="google-site-verification" content="azz-gr6wqTzFwH604lYSEIaCoBhzniepgoYUe42Ix5M" />
+    <link rel="stylesheet" type="text/css" title="Default" href="/css/default.css" />
+    <link type="text/css" rel="stylesheet" href="/styles/shCore.css" />
+    <link type="text/css" rel="stylesheet" href="/styles/shThemeDefault.css" />
+    
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-144812-1']);
+      _gaq.push(['_setDomainName', '.stephenduncanjr.com']);
+      _gaq.push(['_trackPageview']);
+      
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    
+    <script type="text/javascript" src="/js/main.js"></script>
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('jquery', '1.3.2');
+      
+      google.setOnLoadCallback(function() {
+        prettify_archives();
+      });
+    </script>
+    
+    <style type="text/css">
+      #navbar-iframe {
+        display: none;
+      }
+      
+      #disqus_thread, #disqus_thread #dsq-content {
+        width: 100%;
+      }
+    </style>
+    
+    <script type="text/javascript" src="/scripts/shCore.js"></script>
+    <script type="text/javascript" src="/scripts/shBrushPlain.js"></script>
+    <script type="text/javascript" src="/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript" src="/scripts/shBrushJava.js"></script>
+    <script type="text/javascript" src="/scripts/shBrushSql.js"></script>
+    <script type="text/javascript" src="/scripts/shBrushXml.js"></script>
+    <script type="text/javascript" src="/scripts/shBrushPython.js"></script>
+    <script type="text/javascript" src="/scripts/shBrushRuby.js"></script>
+    <script type="text/javascript" src="/scripts/shBrushCss.js"></script>
+    <script type="text/javascript">
+      SyntaxHighlighter.all();
+    </script>
+  </head>
+  <body>
+    <h1 id="banner">{{ site.title | smartify | escape }} <span id="subBanner">{{ site.description | smartify | escape }}</span></h1>
+    <div id="content_section">
+      {{ content }}
+    </div>
+    <div id="navigation_section">
+      <div id="navigation" class="sidebar">
+        <ul class="link_list">
+          <li>
+            <a class="internal" href="/">Blog</a> | <a class="internal" href="/feeds/posts/default">Feed</a>
+          </li>
+          <li>
+            <a class="internal" href="/writing/writing.html">Writings</a>
+          </li>
+          <li>
+            <a class="internal" href="/about.html">About Me</a>
+          </li>
+          <li>
+            <a class="internal" href="/pictures.html">Pictures</a>
+          </li>
+          <li>
+            <a class="internal" href="/projects.html">Projects</a>
+          </li>
+          <li>
+            <a class="internal" href="/firefoxthemes.html">Firefox Themes</a>
+          </li>
+        </ul>
+        
+        <address>
+          <a href="mailto:webmaster@stephenduncanjr.com">Contact Me</a>
+        </address>
+        
+        <form method="get" action="http://www.google.com/custom">
+          <div id="googlesearch">
+            <label for="inputField">
+              <span style="background-color:white;font-family:monospace;">
+                <span style="color:blue;">G</span><span style="color:red;">o</span><span style="color:#CCCC00;">o</span><span style="color:blue;">g</span><span style="color:green;">l</span><span style="color:red;">e</span></span>
+                <span style="font-size:50%;">tm</span>  Search:
+                <input id="inputField" type="text" size="15" name="q" maxlength="255" />
+              </label>
+              <input type="submit" value="Go"/>
+              <br />
+              <input type="hidden" name="sitesearch" checked="checked" value="www.stephenduncanjr.com" />
+              <input type="hidden" name="domains" value="www.stephenduncanjr.com" />
+            </div>
+          </form>
+        </div>
+        
+        <div id="archives" class="sidebar">
+          <ul class="link_list">
+            <BloggerArchives>
+              <li>
+                {%- comment -%}Insert Archive Links{%- endcomment -%}
+              </li>
+            </BloggerArchives>
+          </ul>
+        </div>
+      </div>
+      
+      <div id="footer">
+        <p id="copyright">Copyright: Stephen Duncan Jr - {{ site.time | date: "%Y" }}</p>
+      </div>
+  </body>
+</html>
