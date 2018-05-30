@@ -1,35 +1,39 @@
 ---
 layout: default
 ---
-<div class="update">
-  <span class="news_title">Updates</span><span class="news_brief">: Converting to Jekyll.</span>
+<div id="content_section">
+  {%- include update.html -%}
+  <h2 class="DateHeader">
+    {{ page.date | date: "%A, %B %e, %Y" }}
+  </h2>
+  <div class="Post">
+    <h3 class="PostTitle">
+      <BlogItemTitle>
+        {{ page.title | smartify | escape }}
+      </BlogItemTitle>
+    </h3>
+    <div class="PostBody">
+      <div style="clear:both;"></div>
+      {{ content }}
+      <div style="clear:both; padding-bottom:0.25em"></div>
+      
+      {%- if page.tags-%}
+        {%- capture tagscommas -%}
+          {%- for tag in page.tags -%}
+            <a rel="tag" href="/search/label/{{ tag }}">{{ tag }}</a>{%- unless forloop.last -%},&nbsp;{%- endunless -%}
+          {%- endfor -%}
+        {%- endcapture -%}
+        <p class="blogger-labels">Labels: {{ tagscommas }}</p>
+      {% endif %}
+    </div>
+    <div class="PostFooter">
+      - {{ page.author | escape }} @ 
+      <a class="internal" href="{{ page.url | relative_url }}" title="permanent link">{{ page.date | date: "%l:%M %p" }}</a>
+      | <a class="internal" href="{{ page.url | relative_url }}#disqus_thread">View comments</a>
+    </div>
+  </div>
 </div>
-<h2 class="DateHeader">
-  {{ page.date | date: "%A, %B %e, %Y" }}
-</h2>
-<div class="Post">
-  <h3 class="PostTitle">
-    <BlogItemTitle>
-      {{ page.title | smartify | escape }}
-    </BlogItemTitle>
-  </h3>
-  <div class="PostBody">
-    <div style="clear:both;"></div>
-    {{ content }}
-    <div style="clear:both; padding-bottom:0.25em"></div>
-    
-    {%- if page.tags-%}
-      {%- capture tagscommas -%}
-        {%- for tag in page.tags -%}
-          <a rel="tag" href="/search/label/{{ tag }}">{{ tag }}</a>{%- unless forloop.last -%},&nbsp;{%- endunless -%}
-        {%- endfor -%}
-      {%- endcapture -%}
-      <p class="blogger-labels">Labels: {{ tagscommas }}</p>
-    {% endif %}
-  </div>
-  <div class="PostFooter">
-    - {{ page.author | escape }} @ 
-    <a class="internal" href="{{ page.url | relative_url }}" title="permanent link">{{ page.date | date: "%l:%M %p" }}</a>
-    | <a class="internal" href="{{ page.url | relative_url }}#disqus_thread">View comments</a>
-  </div>
+<div id="navigation_section">
+  {%- include navigation.html -%}
+  {%- include archive-sidebar.html -%}
 </div>

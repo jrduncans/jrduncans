@@ -1,0 +1,14 @@
+<div id="archives" class="sidebar">
+  <ul class="link_list">
+    {%- assign postsByYear = site.posts | group_by_exp:"post", "post.date | date: '%Y'" | reverse -%}
+    {%- for year in postsByYear -%}
+      {%- assign postsByMonth = year.items | group_by_exp:"post", "post.date | date: '%m,%B'" -%}
+      {%- for month in postsByMonth -%}
+        {%- assign m = month.name | split: "," -%}
+        <li>
+          <a class="internal" href="/{{ year.name }}/{{ m[0] }}">{{ m[1] }} {{ year.name }}</a>
+        </li>
+      {%- endfor -%}
+    {%- endfor -%}
+  </ul>
+</div>
