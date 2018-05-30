@@ -7,7 +7,6 @@ permalink: /:year/:month/:title:output_ext
 
 plugins:
   - jekyll-feed
-  - jekyll-paginate
 
 defaults:
   -
