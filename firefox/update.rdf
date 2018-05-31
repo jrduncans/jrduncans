@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+     
+  <!-- WinNoia //-->
+  <RDF:Description about="urn:mozilla:extension:{EF9E20DD-BF1F-436d-976C-6B51D53E6277}">
+    <em:version>1.3</em:version>
+    <em:updateLink>http://www.stephenduncanjr.com/firefox/WinNoia1.3.jar</em:updateLink>
+  </RDF:Description>
+
+</RDF> 
