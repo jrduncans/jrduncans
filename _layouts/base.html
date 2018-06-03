@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{ site.title | escape }}: {{ page.title | escape }}</title>
+    <title>{{ site.title | escape }}: {% if page.type == "month" %}{{ page.date | date: "%B %Y" }}{% else %}{{ page.title | escape }}{% endif %}</title>
     <meta name="Author" content="Stephen Duncan Jr." />
     <meta name="description" content="{{ site.description | escape }}" />
     <meta name="keywords" content="Stephen,Duncan,Stephen Duncan" />

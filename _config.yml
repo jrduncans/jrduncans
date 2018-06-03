@@ -7,6 +7,7 @@ permalink: /:year/:month/:title:output_ext
 
 plugins:
   - jekyll-feed
+  - jekyll-archives
 
 defaults:
   -
@@ -17,3 +18,10 @@ defaults:
       layout: post
       author: Stephen
       
+jekyll-archives:
+  enabled:
+    - month
+    - tags
+  permalinks:
+    month: '/:year/:month/'
+    tag: '/search/label/:name/'
