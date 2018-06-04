@@ -1,0 +1,31 @@
+s3_bucket: www.stephenduncanjr.com
+# site: _site/
+
+index_document: index.html
+error_document: error.html
+
+max_age:
+  "files/*": 86400
+  "firefox/*.jar": 86400
+  "hello/*": 86400
+  "images/*": 86400
+  "pictures/*": 86400
+  "*": 300
+
+gzip: true
+
+content_type:
+  "feed.xml": "application/atom+xml; charset=utf-8"
+
+redirects:
+  "/feeds/posts/default": /feed.xml
+
+routing_rules:
+  - condition:
+      key_prefix_equals: search/label/
+    redirect:
+      host_name: www.stephenduncanjr.com
+      replace_key_prefix_with: tag/
+      http_redirect_code: 301
+
+treat_zero_length_objects_as_redirects: true

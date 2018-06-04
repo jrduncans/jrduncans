@@ -5,6 +5,9 @@ baseurl: ""
 url: http://www.stephenduncanjr.com
 permalink: /:year/:month/:title:output_ext
 
+exclude:
+  - s3_website.yaml
+
 plugins:
   - jekyll-feed
   - jekyll-archives
@@ -17,8 +20,7 @@ defaults:
     values:
       layout: post
       author: Stephen
-feed:
-  path: /feeds/posts/default
+
 jekyll-archives:
   enabled:
     - month
