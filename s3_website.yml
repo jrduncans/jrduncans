@@ -25,4 +25,12 @@ content_type:
 redirects:
   "feeds/posts/default": /feed.xml
 
+routing_rules:
+  - condition:
+      key_prefix_equals: search/labels/
+    redirect:
+      host_name: www.stephenduncanjr.com
+      replace_key_prefix_with: tag/
+      http_redirect_code: 301
+
 treat_zero_length_objects_as_redirects: true
