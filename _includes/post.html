@@ -7,13 +7,13 @@
     {{ include.item.content }}
     <div style="clear:both; padding-bottom:0.25em"></div>
     
-    {%- if include.item.tags -%}
+    {%- if include.item.tags and include.item.tags != empty -%}
       {%- capture tagscommas -%}
         {%- for tag in include.item.tags -%}
-          <a rel="tag" href="/tag/{{ tag | uri_escape }}">{{ tag | escape }}</a>{% unless forloop.last %}, {% endunless %}
+          <a rel="tag" class="internal" href="/tag/{{ tag | uri_escape }}">{{ tag | escape }}</a>{% unless forloop.last %}, {% endunless %}
         {%- endfor -%}
       {%- endcapture -%}
-      <p class="blogger-labels">Labels: {{ tagscommas }}</p>
+      <div class="tags">{{ tagscommas }}</div>
     {%- endif -%}
   </div>
   <div class="PostFooter">
