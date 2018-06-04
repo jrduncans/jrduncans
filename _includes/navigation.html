@@ -1,7 +1,7 @@
 <div id="navigation" class="sidebar">
   <ul class="link_list">
     <li>
-      <a class="internal" href="{% link index.html %}">Blog</a> | <a class="internal" href="/feeds/posts/default">Feed</a>
+      <a class="internal" href="{% link index.html %}">Blog</a> | <a class="internal" href="{{ "/feeds/posts/default" | relative_url }}">Feed</a>
     </li>
     <li>
       <a class="internal" href="{% link writing/writing.html %}">Writings</a>
