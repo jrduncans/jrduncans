@@ -17,7 +17,8 @@ defaults:
     values:
       layout: post
       author: Stephen
-      
+feed:
+  path: /feeds/posts/default
 jekyll-archives:
   enabled:
     - month
