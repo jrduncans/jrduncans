@@ -10,7 +10,7 @@
     {%- if include.item.tags -%}
       {%- capture tagscommas -%}
         {%- for tag in include.item.tags -%}
-          <a rel="tag" href="/search/label/{{ tag }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
+          <a rel="tag" href="/tag/{{ tag | uri_escape }}">{{ tag | escape }}</a>{% unless forloop.last %}, {% endunless %}
         {%- endfor -%}
       {%- endcapture -%}
       <p class="blogger-labels">Labels: {{ tagscommas }}</p>

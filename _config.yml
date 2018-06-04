@@ -25,6 +25,3 @@ jekyll-archives:
   enabled:
     - month
     - tags
-  permalinks:
-    month: '/:year/:month/'
-    tag: '/search/label/:name/'
