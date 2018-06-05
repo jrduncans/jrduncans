@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Really Overdue Update
 date: '2018-06-04 06:56:50 -07:00'
 tags:
