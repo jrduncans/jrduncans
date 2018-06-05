@@ -7,8 +7,6 @@
     <meta name="keywords" content="Stephen,Duncan,Stephen Duncan" />
     <meta name="google-site-verification" content="azz-gr6wqTzFwH604lYSEIaCoBhzniepgoYUe42Ix5M" />
     <link rel="stylesheet" type="text/css" title="Default" href="{{ "/css/default.css" | relative_url }}" />
-    <link type="text/css" rel="stylesheet" href="{% link styles/shCore.css %}" />
-    <link type="text/css" rel="stylesheet" href="{% link styles/shThemeDefault.css %}" />
     {% feed_meta %}
     
     <script type="text/javascript" src="{% link js/main.js %}"></script>
@@ -30,19 +28,6 @@
         width: 100%;
       }
     </style>
-    
-    <script type="text/javascript" src="{% link scripts/shCore.js %}"></script>
-    <script type="text/javascript" src="{% link scripts/shBrushPlain.js %}"></script>
-    <script type="text/javascript" src="{% link scripts/shBrushJScript.js %}"></script>
-    <script type="text/javascript" src="{% link scripts/shBrushJava.js %}"></script>
-    <script type="text/javascript" src="{% link scripts/shBrushSql.js %}"></script>
-    <script type="text/javascript" src="{% link scripts/shBrushXml.js %}"></script>
-    <script type="text/javascript" src="{% link scripts/shBrushPython.js %}"></script>
-    <script type="text/javascript" src="{% link scripts/shBrushRuby.js %}"></script>
-    <script type="text/javascript" src="{% link scripts/shBrushCss.js %}"></script>
-    <script type="text/javascript">
-      SyntaxHighlighter.all();
-    </script>
   </head>
   <body>
     <h1 id="banner">{{ site.title | smartify | escape }} <span id="subBanner">{{ site.description | smartify | escape }}</span></h1>

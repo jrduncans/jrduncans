@@ -15,11 +15,11 @@ So, I stayed up <em>way</em> too late last night uploading version after version
 </p>
 <p>
 I fixed all the pages to have the extension .html instead of .shtml.  The .shtml was leftover from when I used to use server-side-includes instead of a combination of <a href="http://www.blogger.com">Blogger</a> templates & <a href="http://webby.rubyforge.org/">Webby</a> layouts to handle common layout issues.  Here's the content of the .htaccess file I used to make sure old links are given a permanent (301) redirect to the new extension:
-<pre class="brush: plain">
+{% highlight apache linenos %}
 RewriteEngine On
 RewriteBase /
 RewriteRule ^(.*)\.shtml$ /$1.html [R=301,L]
-</pre>
+{% endhighlight %}
 </p>
 <p>
 During the process, I noticed that Blogger wasn't producing an archive index page anymore.  So I added archives to the sidebar for each blog.  I made my css rules a bit more generic by making sidebar sections a class, instead of duplicating rules for different ids.

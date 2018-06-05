@@ -9,5 +9,5 @@ modified_time: '2004-09-24T18:52:15.036-05:00'
 ---
 
 <p>
-I've decided to go with the <a href="http://www.atomenabled.org/">Atom</a> format for syndication of data in the web application I develop at work.  Inside the content tags, I'm placing inline XHTML (not escaped).  I then wanted to use an XSLT to show the feed more nicely in the browser.  Simply using &lt;xsl:copy-of select="atom:content"&gt; worked for Internet Explorer, but not for Mozilla Firefox.  It turns out it wasn't treating the content as XHTML, so I wrapped the content inside a div: &lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;
+I've decided to go with the <a href="http://www.atomenabled.org/">Atom</a> format for syndication of data in the web application I develop at work.  Inside the content tags, I'm placing inline XHTML (not escaped).  I then wanted to use an XSLT to show the feed more nicely in the browser.  Simply using <code>&lt;xsl:copy-of select="atom:content"&gt;</code> worked for Internet Explorer, but not for Mozilla Firefox.  It turns out it wasn't treating the content as XHTML, so I wrapped the content inside a div: <code>&lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;</code>
 </p>

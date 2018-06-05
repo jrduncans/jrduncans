@@ -18,19 +18,19 @@ Rather than put that time completely to waste, I decided to prettify the archive
 </p>
 <p>
 Now, for the code.  First, on each blog page (via the template), I load my JavaScript file, and I load jQuery via <a href="http://code.google.com/apis/ajaxlibs/">Google AJAX Libraries API</a>:
-<pre class="brush: xml">
-&lt;script type="text/javascript" src="/js/main.js">&lt;/script>
-&lt;script type="text/javascript" src="http://www.google.com/jsapi">&lt;/script>
-&lt;script type="text/javascript">
+{% highlight html linenos %}{% raw %}
+<script type="text/javascript" src="/js/main.js"></script>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">
     google.load('jquery', '1.3.2');
 
     google.setOnLoadCallback(function() {
             prettify_archives();
     });
-&lt;/script>
-</pre>
-This runs prettify_archives function:
-<pre class="brush: javascript">
+</script>
+{% endraw %}{% endhighlight %}
+This runs <code>prettify_archives</code> function:
+{% highlight javascript linenos %}{% raw %}
 function prettify_archives() {
     var years = [];
 
@@ -44,23 +44,23 @@ function prettify_archives() {
 
     years.reverse();
 
-    var html = ['&lt;h4 style="margin:0;">Archives&lt;/h4>'];
+    var html = ['<h4 style="margin:0;">Archives</h4>'];
 
     $(years).each(function() {
-        html.push('&lt;select style="width: 11em;" ' +
+        html.push('<select style="width: 11em;" ' +
             'onchange="document.location.href=this.options[this.selectedIndex].value;">');
-        html.push('&lt;option selected="selected">' + this + '&lt;/option>');
+        html.push('<option selected="selected">' + this + '</option>');
         $("#archives > ul > li:contains('" + this + "') > a").each(function() {
-            html.push('&lt;option value="' +
+            html.push('<option value="' +
                 $(this).attr('href')
                 + '">'
                 + $(this).text()
-                + '&lt;/option>');
+                + '</option>');
         });
 
-        html.push('&lt;/select>&lt;br />');
+        html.push('</select><br />');
     });
 
     $('#archives > ul').replaceWith(html.join("\n"));
 }
-</pre>
+{% endraw %}{% endhighlight %}
