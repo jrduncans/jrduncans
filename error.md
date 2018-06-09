@@ -2,11 +2,10 @@
 layout: default
 title: Page Not Found
 ---
-<p>
-	<h1>404 Not Found</h1>
-<p>
+# 404 Not Found
+
 The requested page was not found.
-</p>
+
 <script type="text/javascript">
   var GOOG_FIXURL_LANG = 'en';
   var GOOG_FIXURL_SITE = 'http://www.stephenduncanjr.com/';

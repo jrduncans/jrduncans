@@ -8,6 +8,5 @@ tags:
 modified_time: '2006-09-30T16:44:38.906-05:00'
 ---
 
-<p>
-My brother, Scott, just <a href="http://flickr.com/photos/stephenduncanjr/sets/72157594305381367/">got married last night</a>.  Congratulations Scott and Dana!
-</p>
+My brother, Scott, just [got married last night](http://flickr.com/photos/stephenduncanjr/sets/72157594305381367/).
+Congratulations Scott and Dana!

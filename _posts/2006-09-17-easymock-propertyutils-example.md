@@ -6,9 +6,13 @@ tags:
 - programming
 modified_time: '2009-03-14T23:07:23.713-05:00'
 ---
-<p>
-Here's the promised example of how to use my <a class="internal" href="/projects/easymock-propertyutils/index.html">EasyMock-PropertyUtils </a>library.  It's a TestNG test class with two test methods.  The first, <code>testSayHelloTo()</code> uses the single-property matcher test.  The second, <code>testSay()</code> uses the multiple-property matcher test by supplying a <code>Map</code> of property names to property values.  If you haven't used EasyMock before, this should also serve as an example of how EasyMock can allow you to unit test in isolation a method that interacts with another class.  Check out the <a href="http://easymock.org/EasyMock2_2_Documentation.html">EasyMock Documentation</a> for more information.
-</p>
+
+Here's the promised example of how to use my [EasyMock-PropertyUtils ](/projects/easymock-propertyutils/index.html){: .internal} library.
+It's a TestNG test class with two test methods.  The first, `testSayHelloTo()` uses the single-property matcher test.  The second,
+`testSay()` uses the multiple-property matcher test by supplying a `Map` of property names to property values. If you haven't used EasyMock
+before, this should also serve as an example of how EasyMock can allow you to unit test in isolation a method that interacts with another
+class. Check out the [EasyMock Documentation](http://easymock.org/EasyMock2_2_Documentation.html) for more information.
+
 {% highlight java linenos %}{% raw %}
 package test;
 

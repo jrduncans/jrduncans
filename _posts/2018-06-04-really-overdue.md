@@ -4,6 +4,7 @@ date: '2018-06-04 06:56:50 -07:00'
 tags:
   - meta
 ---
+
 It only took [9 years]({% post_url 2009-03-15-jquery-for-archives %}){: .internal}, but I finally updated my whole site to use a static generator tool.
 In the meantime, [Webby](https://github.com/TwP/webby) has been discontinued, and [Jekyll](https://jekyllrb.com) has become the dominant
 tool of choice. It took a little while, but I'm happy to feel full in control of things again.
