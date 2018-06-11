@@ -8,6 +8,4 @@ tags:
 modified_time: '2006-06-21T07:43:38.026-05:00'
 ---
 
-<p>
-<a href="http://www.bloglines.com/about/news#106">Bloglines has begun adding suport for Atom 1.0</a>
-</p>
+[Bloglines has begun adding suport for Atom 1.0](http://www.bloglines.com/about/news#106)
