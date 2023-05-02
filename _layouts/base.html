@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>{{ site.title | escape }}{% if page.type == "month" %}: {{ page.date | date: "%B %Y" }}{% elsif page.title %}: {{ page.title | escape }}{% endif %}</title>
-    <meta name="Author" content="Stephen Duncan Jr." />
-    <meta name="description" content="{{ site.description | escape }}" />
-    <meta name="keywords" content="Stephen,Duncan,Stephen Duncan" />
-    <meta name="google-site-verification" content="azz-gr6wqTzFwH604lYSEIaCoBhzniepgoYUe42Ix5M" />
-    <link rel="stylesheet" type="text/css" title="Default" href="{{ "/css/default.css" | relative_url }}" />
+    <meta name="Author" content="Stephen Duncan Jr.">
+    <meta name="description" content="{{ site.description | escape }}">
+    <meta name="keywords" content="Stephen,Duncan,Stephen Duncan">
+    <meta name="google-site-verification" content="azz-gr6wqTzFwH604lYSEIaCoBhzniepgoYUe42Ix5M">
+    <link rel="me" href="https://hachyderm.io/@jrduncans">
+    <link rel="stylesheet" type="text/css" title="Default" href="{{ "/css/default.css" | relative_url }}">
     {% feed_meta %}
     
     <script type="text/javascript" src="{% link js/main.js %}"></script>
